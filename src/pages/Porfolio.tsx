@@ -1,0 +1,25 @@
+import { Typography } from "@mui/material";
+import { useTranslation } from "react-i18next";
+import Services from "../components/Services";
+
+const Portfolio = () => {
+  const { t } = useTranslation();
+
+  return (
+    <>
+      <Typography variant="body1" sx={{ mt: 2, color: "text.secondary" }}>
+        PORTFOLIO
+      </Typography>
+      <Typography variant="h4" fontWeight="bold">
+        {t("about_me")}
+      </Typography>
+      <Portfolio />
+      <Typography variant="h5" fontWeight="bold" sx={{ mt: 4 }}>
+        {t("what_i_do")}
+      </Typography>
+      <Services />
+    </>
+  );
+};
+
+export default Portfolio;
