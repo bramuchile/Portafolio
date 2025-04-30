@@ -1,24 +1,15 @@
-import { Typography } from "@mui/material";
-import { useTranslation } from "react-i18next";
-import Services from "../components/Services";
+import AboutDescription from "../components/AboutMe/AboutDescription";
+import WhatIDo from "../components/AboutMe/WhatIDo";
+import Skills from "../components/AboutMe/Skills";
+import { Container } from "@mui/material";
 
 const AboutMe = () => {
-  const { t } = useTranslation();
-
   return (
-    <>
-      <Typography variant="body1" sx={{ mt: 2, color: "text.secondary" }}>
-        {t("about_me_description")}
-      </Typography>
-      <Typography variant="h4" fontWeight="bold">
-        {t("about_me")}
-      </Typography>
-      <AboutMe />
-      <Typography variant="h5" fontWeight="bold" sx={{ mt: 4 }}>
-        {t("what_i_do")}
-      </Typography>
-      <Services />
-    </>
+    <Container sx={{mt:2,mb:4}}>
+      <AboutDescription />
+      <WhatIDo />
+      <Skills />
+    </Container>
   );
 };
 

@@ -13,7 +13,7 @@ const Portfolio = () => {
       <Typography variant="h4" fontWeight="bold">
         {t("about_me")}
       </Typography>
-      <Portfolio />
+    
       <Typography variant="h5" fontWeight="bold" sx={{ mt: 4 }}>
         {t("what_i_do")}
       </Typography>
