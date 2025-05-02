@@ -26,7 +26,7 @@ const AvatarCard = () => {
         textAlign: "center",
         borderRadius: 5,
         color: "white",
-        maxWidth: 300,
+        maxWidth: 350,
         mx: "auto",
         boxShadow: "0px 4px 10px rgba(0,0,0,0.5)",
         border: "1px solid rgba(255, 255, 255, 0.1)",

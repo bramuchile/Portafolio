@@ -17,7 +17,7 @@ import Resume from "./pages/Resume";
 function App() {
   const { toggleTheme, mode } = useContext(ThemeContext);
   const { i18n } = useTranslation();
-  const isMediumScreen = useMediaQuery("(min-width: 1200px)");
+  const isMediumScreen = useMediaQuery("(min-width:960px)");
   const [currentPage, setCurrentPage] = useState<"AboutMe" | "Contact" | "Porfolio" | "Resume">("AboutMe");
 
   const handleToggleLanguage = () => {
@@ -36,7 +36,7 @@ function App() {
       <Grid container spacing={3} sx={{ flexDirection: { xs: "column", md: "row" } }}>
         
         {/* Sidebar: Avatar + Configuración */}
-        <Grid size={{ xs: 12, lg: 3 }}>
+        <Grid size={{ xs: 12, md: 3 }}>
           <AvatarCard />
           <Paper
             sx={{
@@ -60,7 +60,7 @@ function App() {
         </Grid>
 
         {/* Sección principal */}
-        <Grid size={{ xs: 12, lg: 9 }}>
+        <Grid size={{ xs: 12, md: 9 }}>
           <Paper
             sx={{
               position: "relative",
