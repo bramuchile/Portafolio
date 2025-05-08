@@ -32,7 +32,7 @@ function App() {
   };
 
   return (
-    <Container maxWidth="md" sx={{ py: 5 }}>
+    <Container maxWidth="lg" sx={{ py: isMediumScreen ? 8 : 4 }}>
       <Grid container spacing={3} sx={{ flexDirection: { xs: "column", md: "row" } }}>
         
         {/* Sidebar: Avatar + Configuración */}

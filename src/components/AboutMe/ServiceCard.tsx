@@ -1,7 +1,8 @@
-import { Card, CardContent, Typography, Box } from "@mui/material";
+import { Card, Typography, Box } from "@mui/material";
+import { ReactNode } from "react";
 
 interface ServiceCardProps {
-  icon: React.ReactNode;
+  icon: ReactNode;
   title: string;
   description: string;
 }
@@ -12,24 +13,40 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ icon, title, description }) =
       sx={{
         bgcolor: "background.paper",
         borderRadius: 3,
-        boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.3)",
-        p: 2,
+        boxShadow: 4,
+        p: 2.5,
         display: "flex",
         flexDirection: "row",
-        alignItems: "center",
-        textAlign: "center",
+        alignItems: "flex-start",
+        gap: 2,
         height: "100%",
+        transition: "transform 0.3s, box-shadow 0.3s",
+        "&:hover": {
+          transform: "translateY(-4px)",
+          boxShadow: 6,
+        },
       }}
     >
-    
-      <Box sx={{ fontSize: 50, color: "primary.main", mb: 2 }}>{icon}</Box>
+      {/* Icono */}
+      <Box
+        sx={{
+          fontSize: 40,
+          color: "primary.main",
+          flexShrink: 0,
+          mt: 0.5,
+        }}
+      >
+        {icon}
+      </Box>
+
+      {/* Texto */}
       <Box>
-      <Typography variant="h6" fontWeight="bold" sx={{ mb: 1 }}>
-        {title}
-      </Typography>
-      <Typography variant="body2" color="text.secondary" >
-        {description}
-      </Typography>
+        <Typography variant="subtitle1" fontWeight="bold" color="text.primary" gutterBottom>
+          {title}
+        </Typography>
+        <Typography variant="body2" color="text.secondary" sx={{ lineHeight: 1.6 }}>
+          {description}
+        </Typography>
       </Box>
     </Card>
   );

@@ -1,106 +1,98 @@
-import { Typography, Box, List, ListItem, ListItemIcon, ListItemText, Button } from "@mui/material";
+import {
+  Box,
+  Typography,
+  Divider,
+  Button,
+  Grid,
+  List,
+  ListItem,
+  ListItemText,
+  Avatar,
+} from "@mui/material";
+import DownloadIcon from "@mui/icons-material/Download";
 import SchoolIcon from "@mui/icons-material/School";
 import WorkIcon from "@mui/icons-material/Work";
-import DownloadIcon from "@mui/icons-material/Download";
 
 const Resume = () => {
   return (
-    <Box sx={{ mt: 4, mb: 4 }}>
-      {/* Education Section */}
-      <Typography variant="h5" fontWeight="bold" sx={{ mb: 2 }}>
-        Education
+    <Box
+      sx={{
+        maxWidth: "900px",
+        mx: "auto",
+        py: 6,
+        px: { xs: 2, sm: 4 },
+      }}
+    >
+      <Typography
+        variant="h4"
+        fontWeight="bold"
+        gutterBottom
+        sx={{ borderBottom: "3px solid #f0b90b", display: "inline-block", mb: 6 }}
+      >
+        Resume
       </Typography>
-      <List>
-        <ListItem>
-          <ListItemIcon>
-            <SchoolIcon color="primary" />
-          </ListItemIcon>
-          <ListItemText
-            primary="Nihareeka College Of Management And Information Technology"
-            secondary="Bachelor of Science in Computer Science and Information Technology (BSc. CSIT) | 2017 – 2021"
-          />
-        </ListItem>
-        <ListItem>
-          <ListItemIcon>
-            <SchoolIcon color="primary" />
-          </ListItemIcon>
-          <ListItemText
-            primary="Greenland International College"
-            secondary="+2 Science | 2015 – 2017"
-          />
-        </ListItem>
-      </List>
 
-      {/* Experience Section */}
-      <Typography variant="h5" fontWeight="bold" sx={{ mt: 4, mb: 2 }}>
-        Experience
-      </Typography>
-      <List>
-        <ListItem>
-          <ListItemIcon>
-            <WorkIcon color="primary" />
-          </ListItemIcon>
-          <ListItemText
-            primary="Mid-Level Flutter Developer | Tokimo Technologies"
-            secondary="Aug 2024 – Present | Kathmandu, Nepal"
-          />
-        </ListItem>
-        <Box sx={{ pl: 7, mb: 2 }}>
-          <Typography variant="body2" color="text.secondary">
-            • Developed new features and implemented UI designs into code using Flutter.<br />
-            • Designed and created custom e-form features including scrolling features and data entries.<br />
-            • Integrated Google and Facebook sign-in for user authentication.<br />
-            • Designed dynamic functionalities using the BLOC design pattern.<br />
-            • Implemented payment gateway integration like Khalti for secure transactions.<br />
-            • Collaborated with other developers and backend team to deliver features.<br />
-            • Ensured smooth functionality and user-friendly experiences throughout the app.<br />
-          </Typography>
-        </Box>
+      {/* Education */}
+      <Section icon={<SchoolIcon />} title="Education">
+        <ResumeItem
+          title="Nihareeka College Of Management And Information Technology"
+          subtitle="Bachelor of Science in Computer Science and Information Technology (BSc. CSIT)"
+          date="2017 — 2021"
+        />
+        <ResumeItem
+          title="Greenland International College"
+          subtitle="+2 Science"
+          date="2015 — 2017"
+        />
+      </Section>
 
-        <ListItem>
-          <ListItemIcon>
-            <WorkIcon color="primary" />
-          </ListItemIcon>
-          <ListItemText
-            primary="Flutter Developer | Infanceer Technology"
-            secondary="Oct 2022 – Aug 2024 | Kathmandu, Nepal"
-          />
-        </ListItem>
-        <Box sx={{ pl: 7, mb: 2 }}>
-          <Typography variant="body2" color="text.secondary">
-            • Developed new features and transformed UI designs into fully functional user interfaces.<br />
-            • Integrated payment solution like eSewa for secure and seamless transactions.<br />
-            • Optimized application performance to ensure a smooth and engaging user experience.<br />
-            • Performed code review and deployed the app in Playstore and Appstore.<br />
-          </Typography>
-        </Box>
+      {/* Experience */}
+      <Section icon={<WorkIcon />} title="Experience">
+        <ResumeItem
+          title="Mid-Level Flutter Developer"
+          subtitle="Tolfam Technologies, Kathmandu, Nepal"
+          date="Aug, 2024 – Present · 10 mos"
+          bullets={[
+            "Developed new features and implemented UI designs using Flutter.",
+            "Created scrollable forms, Google & Facebook auth.",
+            "Used BLoC pattern and API integrations.",
+          ]}
+        />
+        <ResumeItem
+          title="Flutter Developer"
+          subtitle="Infoneer Technology, Kathmandu, Nepal"
+          date="Oct, 2022 – Aug, 2024 · 1 yr, 11 mos"
+          bullets={[
+            "Developed UI and optimized performance.",
+            "Integrated eSewa for transactions.",
+            "Wrote clean and scalable code.",
+          ]}
+        />
+        <ResumeItem
+          title="Flutter Developer Intern"
+          subtitle="YAI Tech Pvt. Ltd, Kathmandu, Nepal"
+          date="May, 2022 – Sep, 2022 · 5 mos"
+          bullets={[
+            "Maintained Flutter apps.",
+            "Worked with cross-functional teams.",
+            "Debugged and refined features.",
+          ]}
+        />
+      </Section>
 
-        <ListItem>
-          <ListItemIcon>
-            <WorkIcon color="primary" />
-          </ListItemIcon>
-          <ListItemText
-            primary="Flutter Developer Intern | YAI Tech Pvt. Ltd"
-            secondary="May 2022 – Sep 2022 | Kathmandu, Nepal"
-          />
-        </ListItem>
-        <Box sx={{ pl: 7 }}>
-          <Typography variant="body2" color="text.secondary">
-            • Assisted in developing and maintaining Flutter applications.<br />
-            • Collaborated with cross-functional teams to deliver efficient, high-quality, and scalable solutions.<br />
-            • Gained hands-on experience in debugging, troubleshooting, and refining app features.<br />
-          </Typography>
-        </Box>
-      </List>
-
-      {/* Download Button */}
-      <Box sx={{ textAlign: "center", mt: 4 }}>
+      <Box sx={{ textAlign: "center", mt: 6 }}>
         <Button
           variant="contained"
-          color="primary"
+          color="warning"
           startIcon={<DownloadIcon />}
-          href="/path/to/cv.pdf"
-          download
+          sx={{
+            borderRadius: "30px",
+            fontWeight: "bold",
+            px: 4,
+            py: 1,
+            textTransform: "none",
+            boxShadow: 3,
+          }}
         >
           Download CV
         </Button>
@@ -110,3 +102,114 @@ const Resume = () => {
 };
 
 export default Resume;
+
+// ---------- Subcomponents ----------
+
+const Section = ({
+  title,
+  icon,
+  children,
+}: {
+  title: string;
+  icon: React.ReactNode;
+  children: React.ReactNode;
+}) => (
+  <Box sx={{ mb: 6 }}>
+    <Box sx={{ display: "flex", alignItems: "center", mb: 2 }}>
+      <Avatar
+        sx={{
+          bgcolor: "warning.main",
+          width: 32,
+          height: 32,
+          mr: 1,
+        }}
+      >
+        {icon}
+      </Avatar>
+      <Typography variant="h6" fontWeight="bold">
+        {title}
+      </Typography>
+    </Box>
+    <Divider sx={{ mb: 3, width: "50px", borderBottomWidth: 3, borderColor: "warning.main" }} />
+    <Box>{children}</Box>
+  </Box>
+);
+
+const ResumeItem = ({
+  title,
+  subtitle,
+  date,
+  bullets,
+}: {
+  title: string;
+  subtitle: string;
+  date: string;
+  bullets?: string[];
+}) => (
+  <Grid container spacing={2} sx={{ position: "relative", mb: 5 }}>
+    {/* Timeline bar */}
+    <Grid
+      size={{ xs: 1 }}
+      sx={{
+        display: "flex",
+        justifyContent: "center",
+        position: "relative",
+      }}
+    >
+      <Box
+        sx={{
+          width: 12,
+          height: 12,
+          bgcolor: "warning.main",
+          borderRadius: "50%",
+          mt: 1,
+          zIndex: 1,
+        }}
+      />
+      <Box
+        sx={{
+          position: "absolute",
+          top: 16,
+          left: "50%",
+          width: "2px",
+          height: "calc(100% - 16px)",
+          bgcolor: "divider",
+        }}
+      />
+    </Grid>
+
+    {/* Main content */}
+    <Grid size={{ xs: 11 }}>
+      <Grid container spacing={2}>
+        <Grid size={{ xs: 12, sm: 9 }}>
+          <Typography variant="subtitle1" fontWeight="bold">
+            {title}
+          </Typography>
+          <Typography variant="body2" sx={{ color: "text.secondary" }}>
+            {subtitle}
+          </Typography>
+        </Grid>
+        <Grid
+          size={{ xs: 12, sm: 3 }}
+          sx={{ textAlign: { xs: "left", sm: "right" }, color: "text.disabled" }}
+        >
+          <Typography variant="caption">{date}</Typography>
+        </Grid>
+      </Grid>
+
+      {bullets && (
+        <List dense sx={{ pl: 2, mt: 1 }}>
+          {bullets.map((point, index) => (
+            <ListItem
+              key={index}
+              disablePadding
+              sx={{ display: "list-item", listStyleType: "disc", pl: 2 }}
+            >
+              <ListItemText primary={point} />
+            </ListItem>
+          ))}
+        </List>
+      )}
+    </Grid>
+  </Grid>
+);
