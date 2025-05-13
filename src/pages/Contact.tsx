@@ -1,11 +1,11 @@
-import { Box, Typography, Grid, TextField, Button } from "@mui/material";
+import { Box, Typography, Grid, TextField, Button, Container } from "@mui/material";
 import { useTranslation } from "react-i18next";
 
 const Contact = () => {
   const { t } = useTranslation();
 
   return (
-    <Box sx={{ mt: 4, mb: 4 }}>
+    <Container sx={{ mt: 4, mb: 4 }}>
       {/* Título */}
       <Typography variant="h4" fontWeight="bold" sx={{ mb: 2 }}>
         Contact
@@ -98,7 +98,7 @@ const Contact = () => {
           </Grid>
         </Grid>
       </Box>
-    </Box>
+    </Container>
   );
 };
 

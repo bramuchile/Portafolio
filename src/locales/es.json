@@ -4,10 +4,11 @@
     "portfolio":"Portafolio",
     "contact":"Contacto",
     "about_me": "Sobre mí",
-    "description": "Un apasionado desarrollador frontend...",
     "toggle_theme": "Cambiar Tema",
     "toggle_language": "Cambiar Idioma",
-    "about_me_description": "Soy un desarrollador fullstack con experiencia en...",
+    "about_me_description1": "Soy un Ingeniero de Software con amplia experiencia en el desarrollo de soluciones informáticas integrales de software. Actualmente, me especializo en tecnologías como React/Expo, TypeScript, API REST, Firebase y SQL, con un enfoque en la creación de aplicaciones móviles de alto rendimiento para Play Store y App Store. Además, tengo experiencia en autenticación de usuarios y en la integración de sistemas backend.",
+    "about_me_description2":"Con habilidades sólidas en la gestión y planificación de objetivos a mediano y largo plazo, me he desempeñado en sectores como la agroindustria y agroexportación, donde he aplicado mi experiencia en el desarrollo de software para mejorar procesos y generar soluciones eficientes.",
+    "about_me_description3":"Si buscas un profesional comprometido con la calidad y la innovación, dispuesto a llevar tu proyecto al siguiente nivel, estoy listo para colaborar y convertir tu visión en realidad.",
     "software_engineer": "Ingeniero de Software"
 
   }

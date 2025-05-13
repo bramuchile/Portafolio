@@ -3,6 +3,7 @@ import { BottomNavigation, BottomNavigationAction, Paper, Tooltip } from "@mui/m
 import WorkIcon from "@mui/icons-material/Work";
 import ContactMailIcon from "@mui/icons-material/ContactMail";
 import PersonIcon from '@mui/icons-material/Person';
+import TimelineIcon from '@mui/icons-material/Timeline';
 
 type Page = "AboutMe" | "Contact" | "Porfolio" | "Resume";
 interface NavigationProps {
@@ -19,6 +20,9 @@ const Navigation: React.FC<NavigationProps> = ({ setCurrentPage }) => {
       <BottomNavigation showLabels onChange={handleChange}>
         <Tooltip title="AboutMe" placement="top">
           <BottomNavigationAction value="AboutMe" label="About" icon={<PersonIcon />} />
+        </Tooltip>
+        <Tooltip title="Resumen" placement="top">
+          <BottomNavigationAction value="Resume" label="Resumen" icon={<TimelineIcon />} />
         </Tooltip>
         <Tooltip title="Porfolio" placement="top">
           <BottomNavigationAction value="Porfolio" label="Portfolio" icon={<WorkIcon />} />

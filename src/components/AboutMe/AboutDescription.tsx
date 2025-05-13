@@ -25,23 +25,21 @@ const AboutDescription = () => {
         variant="body1"
         sx={{ color: "text.secondary", mb: 2, lineHeight: 1.8 }}
       >
-        A passionate Flutter developer with strong expertise in cross-platform
-        apps, REST APIs, UI/UX, widgets, and state management solutions. Proven
-        track record in delivering cutting-edge solutions, including API
-        integration, third-party libraries, and performance optimization. Adept
-        at debugging to ensure high-quality, responsive apps and an agile
-        collaborator committed to staying current with industry trends.
+       {t("about_me_description1")}
       </Typography>
 
       {/* Segundo párrafo */}
       <Typography
         variant="body1"
+        sx={{ color: "text.secondary",mb: 2, lineHeight: 1.8 }}
+      >
+        {t("about_me_description2")}
+      </Typography>
+      <Typography
+        variant="body1"
         sx={{ color: "text.secondary", lineHeight: 1.8 }}
       >
-        If you're seeking a skilled Flutter developer to breathe life into your
-        project and exceed your expectations, I am here to collaborate and
-        create magic together. Reach out, and let's transform your vision into a
-        reality!
+        {t("about_me_description3")}
       </Typography>
     </Box>
   );
