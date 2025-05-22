@@ -1,5 +1,4 @@
 import { Grid, Paper, Typography } from "@mui/material";
-import { useTranslation } from "react-i18next";
 
 const services = [
   { title: "Mobile Apps", description: "Desarrollo de apps para Android y iOS." },
@@ -9,7 +8,6 @@ const services = [
 ];
 
 const Services = () => {
-  const { t } = useTranslation();
 
   return (
     <Grid container spacing={2} sx={{ mt: 2 }}>

@@ -7,7 +7,7 @@ import {
   IconButton,
   Divider,
   Tooltip,
-  Grid,
+  
   Collapse,
   useMediaQuery,
   useTheme,
@@ -35,7 +35,7 @@ const AvatarCard = () => {
   const [expanded, setExpanded] = useState(false);
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("md"));
-  const showDetails = !isSmallScreen || expanded;
+ 
 
   return (
     <Paper

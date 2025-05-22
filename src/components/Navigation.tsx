@@ -11,7 +11,7 @@ interface NavigationProps {
 }
 
 const Navigation: React.FC<NavigationProps> = ({ setCurrentPage }) => {
-  const handleChange = (event: React.SyntheticEvent, newValue: Page) => {
+  const handleChange = (_event: React.SyntheticEvent, newValue: Page) => {
     setCurrentPage(newValue);
   };
 

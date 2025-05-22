@@ -1,8 +1,6 @@
 import { Grid, Typography, Box } from "@mui/material";
 
-import WebIcon from "@mui/icons-material/Web";
-import DesignServicesIcon from "@mui/icons-material/DesignServices";
-import StorageIcon from "@mui/icons-material/Storage";
+
 import  IconApp from "../../assets/icon-app.svg";
 import IconBackend from "../../assets/icon-backend.svg";
 import IconUI from "../../assets/icon-design.svg";

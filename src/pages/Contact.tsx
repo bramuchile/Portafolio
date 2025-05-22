@@ -1,8 +1,7 @@
 import { Box, Typography, Grid, TextField, Button, Container } from "@mui/material";
-import { useTranslation } from "react-i18next";
+
 
 const Contact = () => {
-  const { t } = useTranslation();
 
   return (
     <Container sx={{ mt: 4, mb: 4 }}>

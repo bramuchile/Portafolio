@@ -61,7 +61,7 @@ const Resume = () => {
             title={t(`resumePage.experience.item${i + 1}.title`)}
             subtitle={t(`resumePage.experience.item${i + 1}.subtitle`)}
             date={t(`resumePage.experience.item${i + 1}.date`)}
-            bullets={t(`resumePage.experience.item${i + 1}.bullets`, { returnObjects: true })}
+            bullets={t(`resumePage.experience.item${i + 1}.bullets`, { returnObjects: true })as unknown as string[]}
           />
         ))}
       </Section>
