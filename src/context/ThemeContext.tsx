@@ -1,11 +1,20 @@
-import { createContext, useState, useMemo } from "react";
-import { ThemeProvider, createTheme } from "@mui/material/styles";
+import { createContext, useState, useMemo, useEffect } from "react";
+import { ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
+import { lightTheme, darkTheme } from "../theme"; // Asegúrate de que la ruta sea correcta
 
-export const ThemeContext = createContext({ toggleTheme: () => {}, mode: "dark" });
+// Tipo del contexto
+export const ThemeContext = createContext({
+  toggleTheme: () => {},
+  mode: "dark" as "light" | "dark",
+});
 
+// Componente proveedor
 export const ThemeProviderWrapper = ({ children }: { children: React.ReactNode }) => {
-  const [mode, setMode] = useState<"light" | "dark">(localStorage.getItem("theme") as "light" | "dark" || "dark");
+  const [mode, setMode] = useState<"light" | "dark">(() => {
+    const stored = localStorage.getItem("theme");
+    return stored === "light" ? "light" : "dark";
+  });
 
   const toggleTheme = () => {
     setMode((prevMode) => {
@@ -15,21 +24,7 @@ export const ThemeProviderWrapper = ({ children }: { children: React.ReactNode }
     });
   };
 
-  const theme = useMemo(
-    () =>
-      createTheme({
-        palette: {
-          mode,
-          primary: { main: "#FFD700" },
-          background: { default: mode === "dark" ? "#121212" : "#ffffff" },
-          text: { primary: mode === "dark" ? "#fff" : "#000" },
-        },
-        typography: {
-          fontFamily: "Poppins, sans-serif",
-        },
-      }),
-    [mode]
-  );
+  const theme = useMemo(() => (mode === "light" ? lightTheme : darkTheme), [mode]);
 
   return (
     <ThemeContext.Provider value={{ toggleTheme, mode }}>

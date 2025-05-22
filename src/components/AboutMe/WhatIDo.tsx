@@ -1,38 +1,45 @@
 import { Grid, Typography, Box } from "@mui/material";
-import MobileFriendlyIcon from "@mui/icons-material/MobileFriendly";
+
 import WebIcon from "@mui/icons-material/Web";
 import DesignServicesIcon from "@mui/icons-material/DesignServices";
 import StorageIcon from "@mui/icons-material/Storage";
+import  IconApp from "../../assets/icon-app.svg";
+import IconBackend from "../../assets/icon-backend.svg";
+import IconUI from "../../assets/icon-design.svg";
+import IconWeb from "../../assets/icon-dev.svg";
+
+import { useTranslation } from "react-i18next";
 import ServiceCard from "./ServiceCard";
 
 const WhatIDo = () => {
+  const { t } = useTranslation();
   const services = [
     {
-      icon: <MobileFriendlyIcon fontSize="large" />,
-      title: "Mobile Apps",
-      description: "Professional development of applications for Android and iOS.",
+      icon: <img src={IconApp} alt="App Icon" style={{ width: 40, height: 40 }} />,
+      title: t("title_mobile"),
+      description: t("description_mobile"),
     },
     {
-      icon: <WebIcon fontSize="large" />,
-      title: "Web Development",
-      description: "High-quality development of sites at the professional level.",
+      icon: <img src={IconWeb} alt="Web Icon" style={{ width: 40, height: 40 }} />,
+      title: t("title_web"),
+      description: t("description_web"),
     },
     {
-      icon: <DesignServicesIcon fontSize="large" />,
-      title: "UI/UX Design",
-      description: "The most modern and high-quality design made at a professional level.",
+      icon: <img src={IconUI} alt="Design Icon" style={{ width: 40, height: 40 }} />,
+      title: t("title_UI"),
+      description: t("description_UI"),
     },
     {
-      icon: <StorageIcon fontSize="large" />,
-      title: "Backend Development",
-      description: "High-performance backend services designed for scalability and seamless user experience.",
+      icon: <img src={IconBackend} alt="Backend Icon" style={{ width: 40, height: 40 }} />,
+      title: t("title_backend"),
+      description: t("description_backend"),
     },
   ];
 
   return (
     <Box sx={{ mt: 4 }}>
       <Typography variant="h5" fontWeight="bold" color="white" sx={{ mb: 2 }}>
-        What I'm Doing
+        {t("what_im_doing")}
       </Typography>
       <Grid container spacing={3}>
         {services.map((service, index) => (

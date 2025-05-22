@@ -11,6 +11,7 @@ import {
 } from "@mui/icons-material";
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import { useRef } from "react";
+import { useTranslation } from "react-i18next";
 
 const skillItems = [
   { label: "JavaScript", icon: <JSIcon sx={{ fontSize: 40, color: "#f7df1e" }} /> },
@@ -29,11 +30,12 @@ const Skills = () => {
   const { scrollXProgress } = useScroll({ container: scrollRef });
   const x = useSpring(scrollXProgress, { stiffness: 100, damping: 20 });
   const width = useTransform(x, (value: number) => `${value * 100}%`); // Use useTransform
+  const { t } = useTranslation();
 
   return (
     <Box sx={{ mt: 6 }}>
       <Typography variant="h6" fontWeight="bold" mb={2}>
-        Skills
+        {t("skills")}
       </Typography>
 
       <Box

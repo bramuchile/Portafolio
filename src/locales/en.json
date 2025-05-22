@@ -10,7 +10,111 @@
     "resume":"Resume",
     "portfolio":"Portfolio",
     "contact":"Contact",
-    "software_engineer": "Software Engineer"
+    "software_engineer": "Software Engineer",
+    "title_mobile": "Mobile Apps",
+    "description_mobile": "Professional development of applications for Android and iOS",
+    "title_web": "Web Development",
+    "description_web": "High-quality development of sites at the professional level.",
+    "title_UI": "UI/UX Design",
+    "description_UI": "The most modern and high-quality design made at a professional level.",
+    "title_backend": "Backend Development",
+    "description_backend": "High-performance backend services designed for scalability and seamless user experience.",
+    "what_im_doing":"What I'm Doing",
+    "skills": "Skills",
+    "resumePage": {
+    "title": "Resume",
+    "download": "Download CV",
+    "education": {
+      "title": "Education",
+      "item1": {
+        "title": "Instituto Profesional AIEP, Curicó",
+        "subtitle": "Engineer in Computer Science, Software Development"
+      },
+      "item2": {
+        "title": "Instituto Profesional AIEP, Curicó",
+        "subtitle": "Technician in Computer Programming"
+      },
+      "item3": {
+        "title": "Escuela Administración y Comercio",
+        "subtitle": "Technician in Business Administration"
+      }
+    },
+    "experience": {
+      "title": "Work Experience",
+      "item1": {
+        "title": "Software Engineer",
+        "subtitle": "DAIA System",
+        "date": "Feb 2024 – Present",
+        "bullets": [
+          "Designed and maintained web and mobile applications using React and Flutter.",
+          "Developed and consumed RESTful APIs.",
+          "Optimized performance and software scalability."
+        ]
+      },
+      "item2": {
+        "title": "Central Control Operator",
+        "subtitle": "Hospital San Juan de Dios, Curicó (Medical)",
+        "date": "May 2023 – Jan 2024",
+        "bullets": [
+          "Monitored BMS systems (climate, electricity, CCTV, etc.).",
+          "Reported anomalies to area supervisors.",
+          "Assisted in developing maintenance tools.",
+          "Supported CCTV, access control and MS4 sensor systems."
+        ]
+      },
+      "item3": {
+        "title": "IT Manager",
+        "subtitle": "Exportadora Frutifor Ltda.",
+        "date": "Dec 2019 – Jun 2022",
+        "bullets": [
+          "Managed fruit reception, packing, and dispatch information.",
+          "Prepared reports on processes and mass balance.",
+          "Supervised IT staff and support roles.",
+          "Developed internal software solutions."
+        ]
+      },
+      "item4": {
+        "title": "IT Support Lead",
+        "subtitle": "UNE GROUP - Escuela Administración y Comercio",
+        "date": "May 2019 – Dec 2019",
+        "bullets": [
+          "Maintained IT infrastructure across the institution.",
+          "Provided technical support to all departments."
+        ]
+      },
+      "item5": {
+        "title": "Logistics Operator",
+        "subtitle": "Agrovista International",
+        "date": "Oct 2018 – Jan 2019",
+        "bullets": [
+          "Controlled logistics documentation and delivery processes.",
+          "Created statistical market reports.",
+          "Provided support to management and clients."
+        ]
+      },
+      "item6": {
+        "title": "Production & COMEX Statistics",
+        "subtitle": "Soc. Comercial e Inversiones La Purísima Ltda.",
+        "date": "Dec 2014 – Aug 2018",
+        "bullets": [
+          "Managed data for fruit reception, processing and exports.",
+          "Handled inventory reconciliations and producer settlements.",
+          "Worked with the export department on reports and dispatch."
+        ]
+      },
+      "item7": {
+        "title": "Software Developer",
+        "subtitle": "Soc. Comercial e Inversiones La Purísima Ltda.",
+        "date": "Dec 2013 – Nov 2014",
+        "bullets": [
+          "Developed internal software tools for departments.",
+          "Performed equipment maintenance.",
+          "Implemented IT solutions to streamline operations."
+        ]
+      }
+    }
+  
+  }
 
     
   }

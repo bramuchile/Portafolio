@@ -36,96 +36,96 @@ function App() {
   return (
     <>
 
-<GlobalStyles
- styles={{
- html: {
- scrollbarWidth: "auto", // para Firefox
- scrollbarColor: "rgba(100, 100, 100, 0.4) transparent",
- },
- body: {
- scrollbarWidth: "auto",
- scrollbarColor: "rgba(100, 100, 100, 0.4) transparent",
- },
- "::-webkit-scrollbar": {
- width: "12px", // más ancho
- },
- "::-webkit-scrollbar-track": {
- background: "transparent",
-        marginTop: "200px", // Increased margin top
-        marginBottom: "200px", // Increased margin bottom
- },
- "::-webkit-scrollbar-corner": {
- background: "transparent", // Corner transparente
- },
-    "::-webkit-scrollbar-thumb": {
-      backgroundColor: "rgba(100, 100, 100, 0.4)",
-      borderRadius: "10px",
-      border: "3px solid transparent", // para darle un espacio interior
-      backgroundClip: "content-box",
-    },
-  }}
-/>
+      <GlobalStyles
+        styles={{
+          html: {
+            scrollbarWidth: "auto", // para Firefox
+            scrollbarColor: "rgba(100, 100, 100, 0.4) transparent",
+          },
+          body: {
+            scrollbarWidth: "auto",
+            scrollbarColor: "rgba(100, 100, 100, 0.4) transparent",
+          },
+          "::-webkit-scrollbar": {
+            width: "12px", // más ancho
+          },
+          "::-webkit-scrollbar-track": {
+            background: "transparent",
+            marginTop: "200px", // Increased margin top
+            marginBottom: "200px", // Increased margin bottom
+          },
+          "::-webkit-scrollbar-corner": {
+            background: "transparent", // Corner transparente
+          },
+          "::-webkit-scrollbar-thumb": {
+            backgroundColor: "rgba(100, 100, 100, 0.4)",
+            borderRadius: "10px",
+            border: "3px solid transparent", // para darle un espacio interior
+            backgroundClip: "content-box",
+          },
+        }}
+      />
 
-    <Container maxWidth="lg" sx={{ py: isMediumScreen ? 8 : 4 }}>
-      <Grid container spacing={3} sx={{ flexDirection: { xs: "column", md: "row" } }}>
+      <Container maxWidth="lg" sx={{ py: isMediumScreen ? 8 : 4 }}>
+        <Grid container spacing={3} sx={{ flexDirection: { xs: "column", md: "row" } }}>
 
-        {/* Sidebar: Avatar + Configuración */}
-        <Grid size={{ xs: 12, md: 3 }}>
-          <Box
-            sx={{
-              position: { xs: "relative", md: "sticky" },
-              top: { md: 64 }, // espacio desde el top (puedes ajustar)
-              alignSelf: "flex-start",
-            }}
-          >
-            <AvatarCard />
+          {/* Sidebar: Avatar + Configuración */}
+          <Grid size={{ xs: 12, md: 3 }}>
+            <Box
+              sx={{
+                position: { xs: "relative", md: "sticky" },
+                top: { md: 64 }, // espacio desde el top (puedes ajustar)
+                alignSelf: "flex-start",
+              }}
+            >
+              <AvatarCard />
+              <Paper
+                sx={{
+                  mt: 3,
+                  p: 2,
+                  display: "flex",
+                  justifyContent: "space-between",
+                  bgcolor: "background.paper",
+                  borderRadius: 5,
+                  boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.3)",
+                  border: "1px solid rgba(255, 255, 255, 0.1)",
+                }}
+              >
+                <IconButton onClick={toggleTheme} color="inherit">
+                  {mode === "dark" ? <Brightness7Icon /> : <Brightness4Icon />}
+                </IconButton>
+                <IconButton onClick={handleToggleLanguage} color="inherit">
+                  <TranslateIcon />
+                </IconButton>
+              </Paper>
+            </Box>
+          </Grid>
+
+
+          {/* Sección principal */}
+          <Grid size={{ xs: 12, md: 9 }}>
             <Paper
               sx={{
-                mt: 3,
-                p: 2,
-                display: "flex",
-                justifyContent: "space-between",
+                position: "relative",
+                m: 0,
+                pt: 0,
                 bgcolor: "background.paper",
+                color: "text.primary",
+                minHeight: "400px",
                 borderRadius: 5,
                 boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.3)",
                 border: "1px solid rgba(255, 255, 255, 0.1)",
               }}
             >
-              <IconButton onClick={toggleTheme} color="inherit">
-                {mode === "dark" ? <Brightness7Icon /> : <Brightness4Icon />}
-              </IconButton>
-              <IconButton onClick={handleToggleLanguage} color="inherit">
-                <TranslateIcon />
-              </IconButton>
+              {isMediumScreen && <DesktopNavbar onPageChange={setCurrentPage} />}
+              {pages[currentPage] || <AboutMe />}
             </Paper>
-          </Box>
+          </Grid>
         </Grid>
 
-
-        {/* Sección principal */}
-        <Grid size={{ xs: 12, md: 9 }}>
-          <Paper
-            sx={{
-              position: "relative",
-              m: 0,
-              pt: 0,
-              bgcolor: "background.default",
-              color: "text.primary",
-              minHeight: "400px",
-              borderRadius: 5,
-              boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.3)",
-              border: "1px solid rgba(255, 255, 255, 0.1)",
-            }}
-          >
-            {isMediumScreen && <DesktopNavbar onPageChange={setCurrentPage} />}
-            {pages[currentPage] || <AboutMe />}
-          </Paper>
-        </Grid>
-      </Grid>
-
-      {/* Menú de Navegación */}
-      {!isMediumScreen && <Navigation setCurrentPage={setCurrentPage} />}
-    </Container>
+        {/* Menú de Navegación */}
+        {!isMediumScreen && <Navigation setCurrentPage={setCurrentPage} />}
+      </Container>
     </>
   );
 }

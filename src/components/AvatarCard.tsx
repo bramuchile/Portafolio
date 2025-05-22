@@ -35,47 +35,41 @@ const AvatarCard = () => {
   const [expanded, setExpanded] = useState(false);
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("md"));
-
-  // For small screens, use the expand toggle; for large, always show
   const showDetails = !isSmallScreen || expanded;
 
   return (
-    
-      <Paper
-        sx={{
-          p: isSmallScreen  ? 2 : 3,
-          
-          bgcolor: "background.paper",
-          textAlign: "center",
-          borderRadius: 5,
-          color: "white",
-          width: "100%",
-          mx: "auto",
-          boxShadow: "0px 4px 10px rgba(0,0,0,0.5)",
-          border: "1px solid rgba(255, 255, 255, 0.1)",
-          position: "relative",
-          
-        }}
-      >
-        {/* Botón visible solo en pantallas pequeñas */}
-        {isSmallScreen && (
-          <IconButton
-            onClick={() => setExpanded(!expanded)}
-            sx={{
-              position: "absolute",
-              top: 8,
-              right: 8,
-              color: "white",
-              padding: "4px",
-              "&:hover": { color: "#aaa" },
-            }}
-            size="small"
-          >
-            {expanded ? <ExpandLessIcon fontSize="small" /> : <ExpandMoreIcon fontSize="small" />}
-          </IconButton>
-        )}
-        <Box sx={{ display:isSmallScreen ? "flex" : "block", alignItems:isSmallScreen ? "flex-start": "center"}}>
+    <Paper
+      sx={{
+        p: isSmallScreen ? 2 : 3,
+        bgcolor: theme.palette.background.paper,
+        textAlign: "center",
+        borderRadius: 5,
+        color: theme.palette.text.primary,
+        width: "100%",
+        mx: "auto",
+        boxShadow: "0px 4px 10px rgba(0,0,0,0.5)",
+        border: `1px solid ${theme.palette.divider || "rgba(255,255,255,0.1)"}`,
+        position: "relative",
+      }}
+    >
+      {isSmallScreen && (
+        <IconButton
+          onClick={() => setExpanded(!expanded)}
+          sx={{
+            position: "absolute",
+            top: 8,
+            right: 8,
+            color: theme.palette.text.secondary,
+            padding: "4px",
+            "&:hover": { color: "#aaa" },
+          }}
+          size="small"
+        >
+          {expanded ? <ExpandLessIcon fontSize="small" /> : <ExpandMoreIcon fontSize="small" />}
+        </IconButton>
+      )}
 
+      <Box sx={{ display: isSmallScreen ? "flex" : "block", alignItems: isSmallScreen ? "flex-start" : "center" }}>
         <Box
           sx={{
             position: "relative",
@@ -83,7 +77,6 @@ const AvatarCard = () => {
             height: isSmallScreen ? 80 : 120,
             mx: isSmallScreen ? 0 : "auto",
             my: isSmallScreen ? 1 : 2,
-            
           }}
         >
           <Avatar
@@ -91,7 +84,7 @@ const AvatarCard = () => {
             sx={{
               width: "100%",
               height: "100%",
-              bgcolor: "#2C2C2C",
+              bgcolor: theme.palette.grey[900],
               borderRadius: 4,
             }}
           />
@@ -105,66 +98,72 @@ const AvatarCard = () => {
                 height: 16,
                 bgcolor: "limegreen",
                 borderRadius: "50%",
-                border: "2px solid #1E1E1E",
+                border: `2px solid ${theme.palette.background.paper}`,
                 animation: `${pulse} 1.5s infinite ease-in-out`,
               }}
             />
           </Tooltip>
         </Box>
-        <Box sx={{ px:2, mt:2}}>
 
-        <Typography variant={isSmallScreen ? "subtitle1" :"h5"} fontWeight="bold" textAlign={isSmallScreen ? "left" : "center"}>
-          Carlos Bravo
-        </Typography>
+        <Box sx={{ px: 2, mt: 2 }}>
+          <Typography
+            variant={isSmallScreen ? "subtitle1" : "h5"}
+            fontWeight="bold"
+            textAlign={isSmallScreen ? "left" : "center"}
+          >
+            Carlos Bravo
+          </Typography>
 
-        <Box
-          sx={{
-            display: "inline-block",
-            bgcolor: "#2B2B2C",
-            px: 4,
-            borderRadius: 2,
-            fontSize: 12,
-            mt: isSmallScreen ? 1 : 2,
-            mb: 2,
-            py: 1,
-            boxShadow: "0px 4px 10px rgba(0,0,0,0.1)",
-          }}
-        >
-          {t("software_engineer")}
+          <Box
+            sx={{
+              display: "inline-block",
+              bgcolor: theme.palette.grey[800],
+              color: theme.palette.text.primary,
+              px: 4,
+              borderRadius: 2,
+              fontSize: 12,
+              mt: isSmallScreen ? 1 : 2,
+              mb: 2,
+              py: 1,
+              boxShadow: "0px 4px 10px rgba(0,0,0,0.1)",
+            }}
+          >
+            {t("software_engineer")}
+          </Box>
         </Box>
-        </Box>
-        </Box>
+      </Box>
 
-        {isSmallScreen ? (
-          <Collapse in={expanded}>
-            <DetailsSection />
-          </Collapse>
-        ) : (
+      {isSmallScreen ? (
+        <Collapse in={expanded}>
           <DetailsSection />
-        )}
-      </Paper>
-    
+        </Collapse>
+      ) : (
+        <DetailsSection />
+      )}
+    </Paper>
   );
 };
 
-const DetailsSection = () => (
-  <>
-    <Divider sx={{ my: 2, bgcolor: "rgba(255,255,255,0.1)" }} />
+const DetailsSection = () => {
+  const theme = useTheme();
+  return (
+    <>
+      <Divider sx={{ my: 2, bgcolor: theme.palette.divider || "rgba(255,255,255,0.1)" }} />
+      <Stack spacing={2}>
+        <InfoItem icon={<MailOutlineIcon />} label="EMAIL" value="carlos.bravo..." />
+        <InfoItem icon={<PhoneAndroidIcon />} label="PHONE" value="+9 7575 ****" />
+        <InfoItem icon={<LocationOnIcon />} label="LOCATION" value="Curicó, Chile" />
+      </Stack>
 
-    <Stack spacing={2}>
-      <InfoItem icon={<MailOutlineIcon />} label="EMAIL" value="carlos.bravo..." />
-      <InfoItem icon={<PhoneAndroidIcon />} label="PHONE" value="+9 7575 ****" />
-      <InfoItem icon={<LocationOnIcon />} label="LOCATION" value="Curicó, Chile" />
-    </Stack>
-
-    <Box sx={{ mt: 3, display: "flex", justifyContent: "center", gap: 1.5 }}>
-      <StyledSocialIcon icon={<LinkedInIcon fontSize="small" />} />
-      <StyledSocialIcon icon={<GitHubIcon fontSize="small" />} />
-      <StyledSocialIcon icon={<GoogleIcon fontSize="small" />} />
-      <StyledSocialIcon icon={<TwitterIcon fontSize="small" />} />
-    </Box>
-  </>
-);
+      <Box sx={{ mt: 3, display: "flex", justifyContent: "center", gap: 1.5 }}>
+        <StyledSocialIcon icon={<LinkedInIcon fontSize="small" />} />
+        <StyledSocialIcon icon={<GitHubIcon fontSize="small" />} />
+        <StyledSocialIcon icon={<GoogleIcon fontSize="small" />} />
+        <StyledSocialIcon icon={<TwitterIcon fontSize="small" />} />
+      </Box>
+    </>
+  );
+};
 
 const InfoItem = ({
   icon,
@@ -174,47 +173,53 @@ const InfoItem = ({
   icon: React.ReactNode;
   label: string;
   value: string;
-}) => (
-  <Box sx={{ display: "flex", alignItems: "center", p: 1.2, borderRadius: 2, gap: 1.5 }}>
-    <Box
+}) => {
+  const theme = useTheme();
+  return (
+    <Box sx={{ display: "flex", alignItems: "center", p: 1.2, borderRadius: 2, gap: 1.5 }}>
+      <Box
+        sx={{
+          alignItems: "center",
+          bgcolor: theme.palette.grey[900],
+          p: 1.2,
+          borderRadius: 2,
+          boxShadow: "0px 2px 6px rgba(0,0,0,0.3)",
+          display: "flex",
+          justifyContent: "center",
+          width: "45px",
+          height: "45px",
+        }}
+      >
+        <Box sx={{ color: theme.palette.primary.main }}>{icon}</Box>
+      </Box>
+      <Box sx={{ textAlign: "left" }}>
+        <Typography variant="caption" sx={{ fontSize: 10, opacity: 0.6 }}>
+          {label}
+        </Typography>
+        <Typography variant="body2" sx={{ fontSize: 13 }}>
+          {value}
+        </Typography>
+      </Box>
+    </Box>
+  );
+};
+
+const StyledSocialIcon = ({ icon }: { icon: React.ReactNode }) => {
+  const theme = useTheme();
+  return (
+    <IconButton
       sx={{
-        alignItems: "center",
-        bgcolor: "#2C2C2C",
-        p: 1.2,
-        borderRadius: 2,
+        bgcolor: theme.palette.grey[800],
+        color: theme.palette.text.primary,
+        "&:hover": {
+          bgcolor: theme.palette.grey[700],
+        },
         boxShadow: "0px 2px 6px rgba(0,0,0,0.3)",
-        display: "flex",
-        justifyContent: "center",
-        width: "45px",
-        height: "45px",
       }}
     >
-      <Box sx={{ color: "gold" }}>{icon}</Box>
-    </Box>
-    <Box sx={{ textAlign: "left" }}>
-      <Typography variant="caption" sx={{ fontSize: 10, opacity: 0.6 }}>
-        {label}
-      </Typography>
-      <Typography variant="body2" sx={{ fontSize: 13 }}>
-        {value}
-      </Typography>
-    </Box>
-  </Box>
-);
-
-const StyledSocialIcon = ({ icon }: { icon: React.ReactNode }) => (
-  <IconButton
-    sx={{
-      bgcolor: "#2B2B2B",
-      color: "white",
-      "&:hover": {
-        bgcolor: "#3C3C3C",
-      },
-      boxShadow: "0px 2px 6px rgba(0,0,0,0.3)",
-    }}
-  >
-    {icon}
-  </IconButton>
-);
+      {icon}
+    </IconButton>
+  );
+};
 
 export default AvatarCard;
