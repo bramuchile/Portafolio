@@ -1,14 +1,34 @@
-import { Box, Typography, Grid, TextField, Button, Container } from "@mui/material";
 
+import {
+  Box,
+  Typography,
+  Grid,
+  TextField,
+  Button,
+  Container,
+  useTheme
+} from "@mui/material";
+import { useTranslation } from "react-i18next";
 
 const Contact = () => {
+  const theme = useTheme();
+  const { t } = useTranslation();
 
   return (
-    <Container sx={{ mt: 4, mb: 4 }}>
+    <Container sx={{ mt: 2, mb: 4 }}>
       {/* Título */}
-      <Typography variant="h4" fontWeight="bold" sx={{ mb: 2 }}>
-        Contact
+      <Typography variant="h4" fontWeight="bold" gutterBottom>
+        {t("contactPage.title")}
       </Typography>
+      <Box
+        sx={{
+          width: 40,
+          height: 4,
+          bgcolor: theme.palette.primary.main,
+          borderRadius: 2,
+          mb: 3,
+        }}
+      />
 
       {/* Mapa */}
       <Box
@@ -32,53 +52,59 @@ const Contact = () => {
         ></iframe>
       </Box>
 
-      {/* Formulario de contacto */}
+      {/* Formulario */}
       <Typography variant="h5" fontWeight="bold" sx={{ mb: 2 }}>
-        Contact Form
+        {t("contactPage.formTitle")}
       </Typography>
+
       <Box component="form" noValidate autoComplete="off">
         <Grid container spacing={3}>
-          {/* Nombre y correo */}
-          <Grid size={{ xs:12, sm:6}}>
+          <Grid size={{ xs: 12, sm: 6 }}>
             <TextField
               fullWidth
-              label="Full name"
+              label={t("contactPage.fullName")}
               variant="outlined"
-              sx={{ bgcolor: "background.paper", borderRadius: 1 }}
+              sx={{
+                bgcolor: theme.palette.background.paper,
+                borderRadius: 1,
+              }}
             />
           </Grid>
-          <Grid size={{ xs:12, sm:6}}>
+          <Grid size={{ xs: 12, sm: 6 }}>
             <TextField
               fullWidth
-              label="Email address"
+              label={t("contactPage.email")}
               variant="outlined"
-              sx={{ bgcolor: "background.paper", borderRadius: 1 }}
+              sx={{
+                bgcolor: theme.palette.background.paper,
+                borderRadius: 1,
+              }}
             />
           </Grid>
-
-          {/* Asunto */}
           <Grid size={12}>
             <TextField
               fullWidth
-              label="Subject"
+              label={t("contactPage.subject")}
               variant="outlined"
-              sx={{ bgcolor: "background.paper", borderRadius: 1 }}
+              sx={{
+                bgcolor: theme.palette.background.paper,
+                borderRadius: 1,
+              }}
             />
           </Grid>
-
-          {/* Mensaje */}
           <Grid size={12}>
             <TextField
               fullWidth
-              label="Your Message"
+              label={t("contactPage.message")}
               variant="outlined"
               multiline
               rows={4}
-              sx={{ bgcolor: "background.paper", borderRadius: 1 }}
+              sx={{
+                bgcolor: theme.palette.background.paper,
+                borderRadius: 1,
+              }}
             />
           </Grid>
-
-          {/* Botón de envío */}
           <Grid size={12} sx={{ textAlign: "right" }}>
             <Button
               variant="contained"
@@ -92,7 +118,7 @@ const Contact = () => {
               }}
               endIcon={<span>🚀</span>}
             >
-              Send Message
+              {t("contactPage.send")}
             </Button>
           </Grid>
         </Grid>

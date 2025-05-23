@@ -47,11 +47,7 @@ const Resume = () => {
           subtitle={t("resumePage.education.item2.subtitle")}
           date="2014"
         />
-        <ResumeItem
-          title={t("resumePage.education.item3.title")}
-          subtitle={t("resumePage.education.item3.subtitle")}
-          date="2011"
-        />
+        
       </Section>
 
       <Section icon={<WorkIcon />} title={t("resumePage.experience.title")}>

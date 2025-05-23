@@ -1,120 +1,121 @@
 {
-    "about":"Sobre mí",
-    "resume":"Resumen",
-    "portfolio":"Portafolio",
-    "contact":"Contacto",
-    "about_me": "Sobre mí",
-    "toggle_theme": "Cambiar Tema",
-    "toggle_language": "Cambiar Idioma",
-    "about_me_description1": "Soy un Ingeniero de Software con amplia experiencia en el desarrollo de soluciones informáticas integrales de software. Actualmente, me especializo en tecnologías como React/Expo, TypeScript, API REST, Firebase y SQL, con un enfoque en la creación de aplicaciones móviles de alto rendimiento para Play Store y App Store. Además, tengo experiencia en autenticación de usuarios y en la integración de sistemas backend.",
-    "about_me_description2":"Con habilidades sólidas en la gestión y planificación de objetivos a mediano y largo plazo, me he desempeñado en sectores como la agroindustria y agroexportación, donde he aplicado mi experiencia en el desarrollo de software para mejorar procesos y generar soluciones eficientes.",
-    "about_me_description3":"Si buscas un profesional comprometido con la calidad y la innovación, dispuesto a llevar tu proyecto al siguiente nivel, estoy listo para colaborar y convertir tu visión en realidad.",
-    "software_engineer": "Ingeniero de Software",
-    "title_mobile": "Aplicaciones móviles",
-    "description_mobile": "Desarrollo profesional de aplicaciones para Android y iOS.",
-    "title_web": "Desarrollo web",
-    "description_web": "Desarrollo de sitios de alta calidad a nivel profesional.",
-    "title_UI": "Diseño UI/UX",
-    "description_UI": "El diseño más moderno y de mayor calidad realizado a nivel profesional.",
-    "title_backend": "Desarrollo backend",
-    "description_backend": "Servicios de backend de alto rendimiento diseñados para la escalabilidad y una experiencia de usuario perfecta.",
-    "what_im_doing":"Que estoy haciendo",
-    "skills": "Habilidades",
-    
-      "resumePage": {
-        "title": "Currículum",
-        "download": "Descargar CV",
-        "education": {
-          "title": "Formación Académica",
-          "item1": {
-            "title": "Instituto Profesional AIEP, Curicó",
-            "subtitle": "Ingeniero de Ejecución en Informática mención Desarrollo de Sistemas"
-          },
-          "item2": {
-            "title": "Instituto Profesional AIEP, Curicó",
-            "subtitle": "Técnico en Programación Computacional"
-          },
-          "item3": {
-            "title": "Escuela Administración y Comercio",
-            "subtitle": "Técnico en Administración de Empresas"
-          }
-        },
-        "experience": {
-          "title": "Experiencia Laboral",
-          "item1": {
-            "title": "Ingeniero en Software",
-            "subtitle": "DAIA System",
-            "date": "Feb 2024 – Actual",
-            "bullets": [
-              "Diseño, implementación y mantenimiento de aplicaciones web y móviles con React y Flutter.",
-              "Diseño y consumo de APIs RESTful, integración de servicios de terceros.",
-              "Optimización del rendimiento y escalabilidad del software."
-            ]
-          },
-          "item2": {
-            "title": "Operador Control Centralizado",
-            "subtitle": "Hospital San Juan de Dios, Curicó (Empresa Medical)",
-            "date": "May 2023 – Ene 2024",
-            "bullets": [
-              "Monitoreo de sistemas BMS (Clima, Electricidad, CCTV, etc.).",
-              "Comunicación con encargados ante anomalías.",
-              "Desarrollo de sistemas internos de mantenimiento.",
-              "Mantenimiento de CCTV, control de accesos y sensores MS4."
-            ]
-          },
-          "item3": {
-            "title": "Jefe de Sistemas",
-            "subtitle": "Exportadora Frutifor Ltda.",
-            "date": "Dic 2019 – Jun 2022",
-            "bullets": [
-              "Gestión de recepción de fruta, packing y despachos.",
-              "Elaboración de informes de procesos y balance de masas.",
-              "Supervisión del equipo TI y operativos.",
-              "Desarrollo de herramientas de automatización."
-            ]
-          },
-          "item4": {
-            "title": "Encargado Informático",
-            "subtitle": "UNE GROUP - Escuela Administración y Comercio",
-            "date": "May 2019 – Dic 2019",
-            "bullets": [
-              "Mantenimiento de infraestructura tecnológica.",
-              "Soporte técnico a todos los departamentos."
-            ]
-          },
-          "item5": {
-            "title": "Operador Logístico",
-            "subtitle": "Agrovista International",
-            "date": "Oct 2018 – Ene 2019",
-            "bullets": [
-              "Gestión documental y logística de entregas.",
-              "Generación de reportes estadísticos.",
-              "Atención a clientes y proveedores."
-            ]
-          },
-          "item6": {
-            "title": "Producción y Estadísticas COMEX",
-            "subtitle": "Soc. Comercial e Inversiones La Purísima Ltda.",
-            "date": "Dic 2014 – Ago 2018",
-            "bullets": [
-              "Control de fruta recepcionada, procesada y exportada.",
-              "Cuadratura de especies y confección de liquidaciones.",
-              "Colaboración con exportaciones y despacho."
-            ]
-          },
-          "item7": {
-            "title": "Programador Computacional",
-            "subtitle": "Soc. Comercial e Inversiones La Purísima Ltda.",
-            "date": "Dic 2013 – Nov 2014",
-            "bullets": [
-              "Desarrollo de herramientas internas para departamentos.",
-              "Mantenimiento de equipos y soporte técnico.",
-              "Automatización de procesos informáticos."
-            ]
-          }
-        }
+  "about": "Sobre mí",
+  "resume": "Resumen",
+  "portfolio": "Portafolio",
+  "contact": "Contacto",
+  "about_me": "Sobre mí",
+  "toggle_theme": "Cambiar Tema",
+  "toggle_language": "Cambiar Idioma",
+  "about_me_description1": "Soy un Ingeniero de Software con amplia experiencia en el desarrollo de soluciones informáticas integrales de software. Actualmente, me especializo en tecnologías como React/Expo, TypeScript, API REST, Firebase y SQL, con un enfoque en la creación de aplicaciones móviles de alto rendimiento para Play Store y App Store. Además, tengo experiencia en autenticación de usuarios y en la integración de sistemas backend.",
+  "about_me_description2": "Con habilidades sólidas en la gestión y planificación de objetivos a mediano y largo plazo, me he desempeñado en sectores como la agroindustria y agroexportación, donde he aplicado mi experiencia en el desarrollo de software para mejorar procesos y generar soluciones eficientes.",
+  "about_me_description3": "Si buscas un profesional comprometido con la calidad y la innovación, dispuesto a llevar tu proyecto al siguiente nivel, estoy listo para colaborar y convertir tu visión en realidad.",
+  "software_engineer": "Ingeniero de Software",
+  "title_mobile": "Aplicaciones móviles",
+  "description_mobile": "Desarrollo profesional de aplicaciones para Android y iOS.",
+  "title_web": "Desarrollo web",
+  "description_web": "Desarrollo de sitios de alta calidad a nivel profesional.",
+  "title_UI": "Diseño UI/UX",
+  "description_UI": "El diseño más moderno y de mayor calidad realizado a nivel profesional.",
+  "title_backend": "Desarrollo backend",
+  "description_backend": "Servicios de backend de alto rendimiento diseñados para la escalabilidad y una experiencia de usuario perfecta.",
+  "what_im_doing": "Que estoy haciendo",
+  "skills": "Habilidades",
+  "resumePage": {
+    "title": "Currículum",
+    "download": "Descargar CV",
+    "education": {
+      "title": "Formación Académica",
+      "item1": {
+        "title": "Instituto Profesional AIEP, Curicó",
+        "subtitle": "Ingeniero de Ejecución en Informática mención Desarrollo de Sistemas"
+      },
+      "item2": {
+        "title": "Instituto Profesional AIEP, Curicó",
+        "subtitle": "Técnico en Programación Computacional"
       }
-    
-
+    },
+    "experience": {
+      "title": "Experiencia Laboral",
+      "item1": {
+        "title": "Ingeniero en Software",
+        "subtitle": "DAIA System",
+        "date": "Feb 2024 – Actual",
+        "bullets": [
+          "Diseño, implementación y mantenimiento de aplicaciones web y móviles con React y Flutter.",
+          "Diseño y consumo de APIs RESTful, integración de servicios de terceros.",
+          "Optimización del rendimiento y escalabilidad del software."
+        ]
+      },
+      "item2": {
+        "title": "Operador Control Centralizado",
+        "subtitle": "Hospital San Juan de Dios, Curicó (Empresa Medical)",
+        "date": "May 2023 – Ene 2024",
+        "bullets": [
+          "Monitoreo de sistemas BMS (Clima, Electricidad, CCTV, etc.).",
+          "Comunicación con encargados ante anomalías.",
+          "Desarrollo de sistemas internos de mantenimiento.",
+          "Mantenimiento de CCTV, control de accesos y sensores MS4."
+        ]
+      },
+      "item3": {
+        "title": "Jefe de Sistemas",
+        "subtitle": "Exportadora Frutifor Ltda.",
+        "date": "Dic 2019 – Jun 2022",
+        "bullets": [
+          "Gestión de recepción de fruta, packing y despachos.",
+          "Elaboración de informes de procesos y balance de masas.",
+          "Supervisión del equipo TI y operativos.",
+          "Desarrollo de herramientas de automatización."
+        ]
+      },
+      "item4": {
+        "title": "Encargado Informático",
+        "subtitle": "UNE GROUP - Escuela Administración y Comercio",
+        "date": "May 2019 – Dic 2019",
+        "bullets": [
+          "Mantenimiento de infraestructura tecnológica.",
+          "Soporte técnico a todos los departamentos."
+        ]
+      },
+      "item5": {
+        "title": "Operador Logístico",
+        "subtitle": "Agrovista International",
+        "date": "Oct 2018 – Ene 2019",
+        "bullets": [
+          "Gestión documental y logística de entregas.",
+          "Generación de reportes estadísticos.",
+          "Atención a clientes y proveedores."
+        ]
+      },
+      "item6": {
+        "title": "Producción y Estadísticas COMEX",
+        "subtitle": "Soc. Comercial e Inversiones La Purísima Ltda.",
+        "date": "Dic 2014 – Ago 2018",
+        "bullets": [
+          "Control de fruta recepcionada, procesada y exportada.",
+          "Cuadratura de especies y confección de liquidaciones.",
+          "Colaboración con exportaciones y despacho."
+        ]
+      },
+      "item7": {
+        "title": "Programador Computacional",
+        "subtitle": "Soc. Comercial e Inversiones La Purísima Ltda.",
+        "date": "Dic 2013 – Nov 2014",
+        "bullets": [
+          "Desarrollo de herramientas internas para departamentos.",
+          "Mantenimiento de equipos y soporte técnico.",
+          "Automatización de procesos informáticos."
+        ]
+      }
+    }
+  },
+  "contactPage": {
+    "title": "Contacto",
+    "formTitle": "Formulario de Contacto",
+    "fullName": "Nombre completo",
+    "email": "Correo electrónico",
+    "subject": "Asunto",
+    "message": "Tu mensaje",
+    "send": "Enviar Mensaje"
   }
-  
+}

@@ -70,16 +70,40 @@ function App() {
         <Grid container spacing={3} sx={{ flexDirection: { xs: "column", md: "row" } }}>
 
           {/* Sidebar: Avatar + Configuración */}
-          <Grid size={{ xs: 12, md: 3 }}>
+          <Grid size={{ xs: 12, md: 3.5 }}>
             <Box
               sx={{
                 position: { xs: "relative", md: "sticky" },
                 top: { md: 64 }, // espacio desde el top (puedes ajustar)
-                alignSelf: "flex-start",
+                alignSelf:  "flex-start" ,
+                justifyContent: { md: "flex-end", xs: "flex-start" },
+                maxWidth: isMediumScreen ? "300px": null
               }}
             >
+
+              {!isMediumScreen && <Grid container justifyContent={"flex-end"}><Paper
+                sx={{
+                  mt: 0,
+                  mb: 2,
+                  width:"200px",
+                  p: 0,
+                  display: "flex",
+                  justifyContent: "space-between",
+                  bgcolor: "background.paper",
+                  borderRadius: 5,
+                  boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.3)",
+                  border: "1px solid rgba(255, 255, 255, 0.1)",
+                }}
+              >
+                <IconButton onClick={toggleTheme} color="inherit">
+                  {mode === "dark" ? <Brightness7Icon /> : <Brightness4Icon />}
+                </IconButton>
+                <IconButton onClick={handleToggleLanguage} color="inherit">
+                  <TranslateIcon />
+                </IconButton>
+              </Paper></Grid>}
               <AvatarCard />
-              <Paper
+              {isMediumScreen && <Paper
                 sx={{
                   mt: 3,
                   p: 2,
@@ -97,13 +121,14 @@ function App() {
                 <IconButton onClick={handleToggleLanguage} color="inherit">
                   <TranslateIcon />
                 </IconButton>
-              </Paper>
+              </Paper>}
+              
             </Box>
           </Grid>
 
 
           {/* Sección principal */}
-          <Grid size={{ xs: 12, md: 9 }}>
+          <Grid size={{ xs: 12, md: 8.5 }}>
             <Paper
               sx={{
                 position: "relative",
@@ -124,7 +149,7 @@ function App() {
         </Grid>
 
         {/* Menú de Navegación */}
-        {!isMediumScreen && <Navigation setCurrentPage={setCurrentPage} />}
+        {!isMediumScreen && <Navigation setCurrentPage={setCurrentPage} currentPage={currentPage} />}
       </Container>
     </>
   );

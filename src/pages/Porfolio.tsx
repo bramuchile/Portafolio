@@ -1,7 +1,8 @@
-import { Typography, Grid,  Container } from "@mui/material";
+import { Typography, Grid,  Container, Box, useTheme } from "@mui/material";
 import ProjectCard from "../components/Portfolio/ProjectCard";
 
 const Portfolio = () => {
+  const theme = useTheme();
   const projects = [
     {
       url: "https://example.com/nagarik-app",
@@ -68,10 +69,19 @@ const Portfolio = () => {
   ];
 
   return (
-    <Container sx={{ mt:2,mb:4 }}>
+    <Container sx={{ mt: 2, mb: 4 }}>
       <Typography variant="h4" fontWeight="bold" sx={{ mb: 2 }}>
         Portfolio
       </Typography>
+      <Box
+        sx={{
+          width: 40,
+          height: 4,
+          bgcolor: theme.palette.primary.main,
+          borderRadius: 2,
+          mb: 3,
+        }}
+      />
       <Typography variant="body1" color="text.secondary" sx={{ mb: 4 }}>
         Explore some of my recent projects across applications, web development, and UI/UX design.
       </Typography>

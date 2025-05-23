@@ -7,7 +7,7 @@ const AboutDescription = () => {
   return (
     <Box sx={{ mb: 6 }}>
       {/* Título con línea decorativa amarilla */}
-      <Typography variant="h4" fontWeight="bold" color="white" sx={{ mb: 1 }}>
+      <Typography variant="h4" fontWeight="bold"  sx={{ mb: 1 }}>
         {t("about_me")}
       </Typography>
       <Box

@@ -1,3 +1,4 @@
+
 import { AppBar, Toolbar, Button, Box, useTheme } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import { useState } from "react";
@@ -28,10 +29,10 @@ const DesktopNavbar = ({ onPageChange }: Props) => {
       sx={{
         mt: 0,
         m: 0,
-        top: -2,
+        top: -3,
         right: -25,
         zIndex: 0,
-        boxShadow: "none", // asegurar que no tenga sombra
+        boxShadow: "none",
       }}
     >
       <Toolbar sx={{ justifyContent: "flex-end" }}>
@@ -39,7 +40,10 @@ const DesktopNavbar = ({ onPageChange }: Props) => {
           display="flex"
           gap={1}
           sx={{
-            bgcolor: "#282829", // color fijo para dark navbar
+            bgcolor:
+              theme.palette.mode === "dark"
+                ? theme.palette.background.default
+                : theme.palette.grey[100],
             borderRadius: "0px 16px 0px 16px",
             p: 2,
             border: `1px solid ${theme.palette.divider}`,
@@ -62,6 +66,9 @@ const DesktopNavbar = ({ onPageChange }: Props) => {
                 textTransform: "none",
                 fontSize: "0.9rem",
                 borderRadius: 4,
+                "&:hover": {
+                  backgroundColor: theme.palette.action.hover,
+                },
               }}
             >
               {item.label}

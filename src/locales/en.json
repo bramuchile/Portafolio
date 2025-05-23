@@ -33,11 +33,8 @@
       "item2": {
         "title": "Instituto Profesional AIEP, Curicó",
         "subtitle": "Technician in Computer Programming"
-      },
-      "item3": {
-        "title": "Escuela Administración y Comercio",
-        "subtitle": "Technician in Business Administration"
       }
+      
     },
     "experience": {
       "title": "Work Experience",
@@ -114,6 +111,15 @@
       }
     }
   
+  },
+  "contactPage": {
+    "title": "Contact",
+    "formTitle": "Contact Form",
+    "fullName": "Full name",
+    "email": "Email address",
+    "subject": "Subject",
+    "message": "Your Message",
+    "send": "Send Message"
   }
 
     

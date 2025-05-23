@@ -1,3 +1,6 @@
+
+
+
 import {
   Paper,
   Typography,
@@ -7,7 +10,6 @@ import {
   IconButton,
   Divider,
   Tooltip,
-  
   Collapse,
   useMediaQuery,
   useTheme,
@@ -25,17 +27,16 @@ import { useTranslation } from "react-i18next";
 import { useState } from "react";
 import { keyframes } from "@emotion/react";
 
+
 const pulse = keyframes`
   0%, 100% { opacity: 1; }
   50% { opacity: 0.3; }
 `;
-
 const AvatarCard = () => {
   const { t } = useTranslation();
   const [expanded, setExpanded] = useState(false);
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("md"));
- 
 
   return (
     <Paper
@@ -48,7 +49,7 @@ const AvatarCard = () => {
         width: "100%",
         mx: "auto",
         boxShadow: "0px 4px 10px rgba(0,0,0,0.5)",
-        border: `1px solid ${theme.palette.divider || "rgba(255,255,255,0.1)"}`,
+        border: `1px solid ${theme.palette.divider}`,
         position: "relative",
       }}
     >
@@ -61,7 +62,7 @@ const AvatarCard = () => {
             right: 8,
             color: theme.palette.text.secondary,
             padding: "4px",
-            "&:hover": { color: "#aaa" },
+            "&:hover": { color: theme.palette.text.disabled },
           }}
           size="small"
         >
@@ -84,7 +85,7 @@ const AvatarCard = () => {
             sx={{
               width: "100%",
               height: "100%",
-              bgcolor: theme.palette.grey[900],
+              bgcolor: theme.palette.background.default,
               borderRadius: 4,
             }}
           />
@@ -96,7 +97,7 @@ const AvatarCard = () => {
                 right: 8,
                 width: 16,
                 height: 16,
-                bgcolor: "limegreen",
+                bgcolor: theme.palette.success.main,
                 borderRadius: "50%",
                 border: `2px solid ${theme.palette.background.paper}`,
                 animation: `${pulse} 1.5s infinite ease-in-out`,
@@ -117,7 +118,7 @@ const AvatarCard = () => {
           <Box
             sx={{
               display: "inline-block",
-              bgcolor: theme.palette.grey[800],
+              bgcolor: theme.palette.action.hover,
               color: theme.palette.text.primary,
               px: 4,
               borderRadius: 2,
@@ -148,7 +149,7 @@ const DetailsSection = () => {
   const theme = useTheme();
   return (
     <>
-      <Divider sx={{ my: 2, bgcolor: theme.palette.divider || "rgba(255,255,255,0.1)" }} />
+      <Divider sx={{ my: 2, bgcolor: theme.palette.divider }} />
       <Stack spacing={2}>
         <InfoItem icon={<MailOutlineIcon />} label="EMAIL" value="carlos.bravo..." />
         <InfoItem icon={<PhoneAndroidIcon />} label="PHONE" value="+9 7575 ****" />
@@ -180,7 +181,7 @@ const InfoItem = ({
       <Box
         sx={{
           alignItems: "center",
-          bgcolor: theme.palette.grey[900],
+          bgcolor: theme.palette.background.default,
           p: 1.2,
           borderRadius: 2,
           boxShadow: "0px 2px 6px rgba(0,0,0,0.3)",
@@ -209,10 +210,10 @@ const StyledSocialIcon = ({ icon }: { icon: React.ReactNode }) => {
   return (
     <IconButton
       sx={{
-        bgcolor: theme.palette.grey[800],
+        bgcolor: theme.palette.background.default,
         color: theme.palette.text.primary,
         "&:hover": {
-          bgcolor: theme.palette.grey[700],
+          bgcolor: theme.palette.action.hover,
         },
         boxShadow: "0px 2px 6px rgba(0,0,0,0.3)",
       }}
