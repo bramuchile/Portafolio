@@ -1,4 +1,7 @@
 {
+  "phone":"TELEFONO",
+  "email":"CORREO ELECTRÓNICO",
+  "location":"UBICACIÓN",
   "about": "Sobre mí",
   "resume": "Resumen",
   "portfolio": "Portafolio",

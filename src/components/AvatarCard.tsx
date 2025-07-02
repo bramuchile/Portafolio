@@ -146,14 +146,15 @@ const AvatarCard = () => {
 };
 
 const DetailsSection = () => {
+  const { t } = useTranslation();
   const theme = useTheme();
   return (
     <>
       <Divider sx={{ my: 2, bgcolor: theme.palette.divider }} />
       <Stack spacing={2}>
-        <InfoItem icon={<MailOutlineIcon />} label="EMAIL" value="carlos.bravo..." />
-        <InfoItem icon={<PhoneAndroidIcon />} label="PHONE" value="+9 7575 ****" />
-        <InfoItem icon={<LocationOnIcon />} label="LOCATION" value="Curicó, Chile" />
+        <InfoItem icon={<MailOutlineIcon />} label={t("email")} value="carlos.bravo..." />
+        {/* <InfoItem icon={<PhoneAndroidIcon />} label="PHONE" value="+ ****" /> */}
+        <InfoItem icon={<LocationOnIcon />} label={t("location")} value="Curicó, Chile" />
       </Stack>
 
       <Box sx={{ mt: 3, display: "flex", justifyContent: "center", gap: 1.5 }}>

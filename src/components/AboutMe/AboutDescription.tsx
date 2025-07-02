@@ -1,8 +1,9 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Typography,useTheme } from "@mui/material";
 import { useTranslation } from "react-i18next";
 
 const AboutDescription = () => {
   const { t } = useTranslation();
+  const theme = useTheme();
 
   return (
     <Box sx={{ mb: 6 }}>
@@ -14,7 +15,7 @@ const AboutDescription = () => {
         sx={{
           width: 40,
           height: 4,
-          bgcolor: "#FFD54F", // Amarillo suave
+          bgcolor: theme.palette.primary.main, // Amarillo suave
           borderRadius: 2,
           mb: 3,
         }}

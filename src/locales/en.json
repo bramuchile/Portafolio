@@ -1,27 +1,30 @@
 {
-    "about_me": "About Me",
-    "description": "A passionate frontend developer...",
-    "toggle_theme": "Toggle Theme",
-    "toggle_language": "Change Language",
-    "about_me_description1": "I am a Software Engineer with extensive experience in developing comprehensive software solutions. I specialize in technologies such as React/Expo, TypeScript, API REST, Firebase, and SQL, with a focus on creating high-performance mobile applications for Play Store and App Store. Additionally, I have experience in user authentication and backend system integration.",
-    "about_me_description2":"With strong skills in managing and planning medium- and long-term objectives, I have worked in industries such as agroindustry and agro-export, where I have applied my software development expertise to improve processes and generate efficient solutions.",
-    "about_me_description3": "If you're looking for a professional committed to quality and innovation, ready to take your project to the next level, I'm here to collaborate and turn your vision into reality.",
-    "about":"About",
-    "resume":"Resume",
-    "portfolio":"Portfolio",
-    "contact":"Contact",
-    "software_engineer": "Software Engineer",
-    "title_mobile": "Mobile Apps",
-    "description_mobile": "Professional development of applications for Android and iOS",
-    "title_web": "Web Development",
-    "description_web": "High-quality development of sites at the professional level.",
-    "title_UI": "UI/UX Design",
-    "description_UI": "The most modern and high-quality design made at a professional level.",
-    "title_backend": "Backend Development",
-    "description_backend": "High-performance backend services designed for scalability and seamless user experience.",
-    "what_im_doing":"What I'm Doing",
-    "skills": "Skills",
-    "resumePage": {
+  "phone":"PHONE",
+  "email":"EMAIL",
+  "location":"LOCATION",
+  "about_me": "About Me",
+  "description": "A passionate frontend developer...",
+  "toggle_theme": "Toggle Theme",
+  "toggle_language": "Change Language",
+  "about_me_description1": "I am a Software Engineer with extensive experience in developing comprehensive software solutions. I specialize in technologies such as React/Expo, TypeScript, API REST, Firebase, and SQL, with a focus on creating high-performance mobile applications for Play Store and App Store. Additionally, I have experience in user authentication and backend system integration.",
+  "about_me_description2": "With strong skills in managing and planning medium- and long-term objectives, I have worked in industries such as agroindustry and agro-export, where I have applied my software development expertise to improve processes and generate efficient solutions.",
+  "about_me_description3": "If you're looking for a professional committed to quality and innovation, ready to take your project to the next level, I'm here to collaborate and turn your vision into reality.",
+  "about": "About",
+  "resume": "Resume",
+  "portfolio": "Portfolio",
+  "contact": "Contact",
+  "software_engineer": "Software Engineer",
+  "title_mobile": "Mobile Apps",
+  "description_mobile": "Professional development of applications for Android and iOS",
+  "title_web": "Web Development",
+  "description_web": "High-quality development of sites at the professional level.",
+  "title_UI": "UI/UX Design",
+  "description_UI": "The most modern and high-quality design made at a professional level.",
+  "title_backend": "Backend Development",
+  "description_backend": "High-performance backend services designed for scalability and seamless user experience.",
+  "what_im_doing": "What I'm Doing",
+  "skills": "Skills",
+  "resumePage": {
     "title": "Resume",
     "download": "Download CV",
     "education": {
@@ -34,7 +37,6 @@
         "title": "Instituto Profesional AIEP, Curicó",
         "subtitle": "Technician in Computer Programming"
       }
-      
     },
     "experience": {
       "title": "Work Experience",
@@ -110,7 +112,6 @@
         ]
       }
     }
-  
   },
   "contactPage": {
     "title": "Contact",
@@ -121,7 +122,4 @@
     "message": "Your Message",
     "send": "Send Message"
   }
-
-    
-  }
-  
+}

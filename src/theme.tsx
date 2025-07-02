@@ -71,17 +71,17 @@ export const lightTheme: Theme = createTheme({
   palette: {
     mode: "light",
     primary: {
-      main: "#FFD700",
+      main: "#1976D2", // Azul elegante (Material Blue 700)
     },
     secondary: {
-      main: "#333333",
+      main: "#0D47A1", // Azul profundo para contraste
     },
     background: {
-      default: "#F9F9FB",
-      paper: "#FFFFFF",
+      default: "#F0F4F8", // Gris azulado muy suave
+      paper: "#FFFFFF",   // Papel limpio, pero no tan blanco puro
     },
     text: {
-      primary: "#1A1A1A",
+      primary: "#1E1E1E", // Gris oscuro
       secondary: "#555555",
     },
     divider: "rgba(0,0,0,0.1)",
@@ -104,14 +104,14 @@ export const lightTheme: Theme = createTheme({
       styleOverrides: {
         root: {
           backgroundImage: "none",
-          boxShadow: "0px 4px 12px rgba(0,0,0,0.1)",
+          boxShadow: "0px 4px 12px rgba(0,0,0,0.06)",
         },
       },
     },
     MuiAppBar: {
       styleOverrides: {
         root: {
-          boxShadow: "none", // evitar sombra en AppBar
+          boxShadow: "none",
         },
       },
     },
@@ -132,3 +132,4 @@ export const lightTheme: Theme = createTheme({
     },
   },
 });
+
