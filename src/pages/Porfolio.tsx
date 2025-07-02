@@ -1,6 +1,14 @@
 import { Typography, Grid,  Container, Box, useTheme } from "@mui/material";
 import ProjectCard from "../components/Portfolio/ProjectCard";
 
+interface Project {
+  url : string,
+  urlImage: string,
+  title: string,
+  tecnologies: string,
+  description: string,
+  urlsImage: string[]
+}
 const Portfolio = () => {
   const theme = useTheme();
   const projects = [
@@ -21,49 +29,8 @@ const Portfolio = () => {
       urlImage: "/images/socialr.png",
       title: "Socialr",
       subtitle: "Application",
-    },
-    {
-      url: "https://example.com/tokmo",
-      urlImage: "/images/tokmo.png",
-      title: "Tokmo",
-      subtitle: "Application",
-    },
-    {
-      url: "https://example.com/saara",
-      urlImage: "/images/saara.png",
-      title: "Saara",
-      subtitle: "Application",
-    },
-    {
-      url: "https://example.com/ifood",
-      urlImage: "/images/ifood.png",
-      title: "iFood",
-      subtitle: "Application",
-    },
-    {
-      url: "https://example.com/mera-date",
-      urlImage: "/images/mera-date.png",
-      title: "MeraDate",
-      subtitle: "Application",
-    },
-    {
-      url: "https://example.com/weather-app",
-      urlImage: "/images/weather-app.png",
-      title: "Weather App",
-      subtitle: "Application",
-    },
-    {
-      url: "https://example.com/music-app",
-      urlImage: "/images/music-app.png",
-      title: "Music App",
-      subtitle: "Application",
-    },
-    {
-      url: "https://example.com/movie-app",
-      urlImage: "/images/movie-app.png",
-      title: "Movie App",
-      subtitle: "Application",
-    },
+    }
+  
     
     
   ];

@@ -1,34 +1,35 @@
-import { Grid, Typography, Box } from "@mui/material";
+import { Grid, Typography, Box, useTheme } from "@mui/material";
 
 
-import  IconApp from "../../assets/icon-app.svg";
-import IconBackend from "../../assets/icon-backend.svg";
-import IconUI from "../../assets/icon-design.svg";
-import IconWeb from "../../assets/icon-dev.svg";
 
 import { useTranslation } from "react-i18next";
 import ServiceCard from "./ServiceCard";
+import IconApp from "./Icons/IconApp";
+import IconBackend from "./Icons/IconBackend";
+import IconDesign from "./Icons/IconDesing";
+import IconDev from "./Icons/IconDev";
 
 const WhatIDo = () => {
   const { t } = useTranslation();
+  const theme = useTheme();
   const services = [
     {
-      icon: <img src={IconApp} alt="App Icon" style={{ width: 40, height: 40 }} />,
+      icon: <IconApp width={40} height={40} />,
       title: t("title_mobile"),
       description: t("description_mobile"),
     },
     {
-      icon: <img src={IconWeb} alt="Web Icon" style={{ width: 40, height: 40 }} />,
+      icon: <IconDev  />,
       title: t("title_web"),
       description: t("description_web"),
     },
     {
-      icon: <img src={IconUI} alt="Design Icon" style={{ width: 40, height: 40 }} />,
+      icon: <IconDesign />,
       title: t("title_UI"),
       description: t("description_UI"),
     },
     {
-      icon: <img src={IconBackend} alt="Backend Icon" style={{ width: 40, height: 40 }} />,
+      icon: <IconBackend width={40} height={40} />,
       title: t("title_backend"),
       description: t("description_backend"),
     },
