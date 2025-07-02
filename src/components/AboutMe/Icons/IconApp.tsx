@@ -1,5 +1,4 @@
 import { useTheme } from "@mui/material";
-import React from "react";
 
 const IconApp = ({ width = 40, height = 40 }: { width?: number; height?: number }) => {
   const theme = useTheme();

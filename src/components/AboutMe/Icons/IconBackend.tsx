@@ -1,5 +1,4 @@
 import { useTheme } from "@mui/material";
-import React from "react";
 
 const IconBackend = ({ width = 100, height = 100 }: { width?: number; height?: number }) => {
   const theme = useTheme();

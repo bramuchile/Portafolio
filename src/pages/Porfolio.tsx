@@ -1,14 +1,7 @@
 import { Typography, Grid,  Container, Box, useTheme } from "@mui/material";
 import ProjectCard from "../components/Portfolio/ProjectCard";
 
-interface Project {
-  url : string,
-  urlImage: string,
-  title: string,
-  tecnologies: string,
-  description: string,
-  urlsImage: string[]
-}
+
 const Portfolio = () => {
   const theme = useTheme();
   const projects = [

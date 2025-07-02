@@ -15,7 +15,6 @@ import {
   useTheme,
 } from "@mui/material";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
-import PhoneAndroidIcon from "@mui/icons-material/PhoneAndroid";
 import Photo from "../../public/photo.jpg"
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";

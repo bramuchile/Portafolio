@@ -11,7 +11,6 @@ import IconDev from "./Icons/IconDev";
 
 const WhatIDo = () => {
   const { t } = useTranslation();
-  const theme = useTheme();
   const services = [
     {
       icon: <IconApp width={40} height={40} />,
