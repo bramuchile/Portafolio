@@ -1,27 +1,69 @@
-import { Box, Typography, useTheme } from "@mui/material";
-import {
-  Code as JSIcon,
-  DataObject as ReactIcon,
-  PhoneIphone as ReactNativeIcon,
-  Fireplace as FirebaseIcon,
-  Storage as SQLIcon,
-  Cloud as AWSIcon,
-  Http as PostmanIcon,
-  Folder as FilezillaIcon,
-} from "@mui/icons-material";
+import { Box, Typography, Tooltip, useTheme } from "@mui/material";
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import { useRef } from "react";
 import { useTranslation } from "react-i18next";
+import ReactImage from "../../assets/skills/react.png"
+import JavascriptImage from "../../assets/skills/javascript.png";
+import FirebaseImage from "../../assets/skills/firebase.png";
+import GithubImage from "../../assets/skills/github.png";
+import SQLImage from "../../assets/skills/sql.png";
+import PostmanImage from "../../assets/skills/postman.png";
+import AWSImage from "../../assets/skills/aws.png";
+import FilezillaImage from "../../assets/skills/filezilla.png";
+import AndroidImage from "../../assets/skills/android.png";
+import AppleImage from "../../assets/skills/apple.png";
 
 const skillItems = [
-  { label: "JavaScript", icon: <JSIcon sx={{ fontSize: 40, color: "#f7df1e" }} /> },
-  { label: "React", icon: <ReactIcon sx={{ fontSize: 40, color: "#61dafb" }} /> },
-  { label: "React Native", icon: <ReactNativeIcon sx={{ fontSize: 40, color: "#61dafb" }} /> },
-  { label: "Firebase", icon: <FirebaseIcon sx={{ fontSize: 40, color: "#FFA000" }} /> },
-  { label: "SQL", icon: <SQLIcon sx={{ fontSize: 40, color: "#00758F" }} /> },
-  { label: "AWS", icon: <AWSIcon sx={{ fontSize: 40, color: "#FF9900" }} /> },
-  { label: "Postman", icon: <PostmanIcon sx={{ fontSize: 40, color: "#FF6C37" }} /> },
-  { label: "FileZilla", icon: <FilezillaIcon sx={{ fontSize: 40, color: "#FF0000" }} /> },
+  {
+    label: "JavaScript",
+    img: JavascriptImage,
+    link: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+  },
+  {
+    label: "React",
+    img: ReactImage,
+    link: "https://reactjs.org",
+  },
+  {
+    label: "Firebase",
+    img: FirebaseImage,
+    link: "https://firebase.google.com",
+  },
+  {
+    label: "GitHub",
+    img: GithubImage,
+    link: "https://www.github.com/",
+  },
+  {
+    label: "SQL",
+    img: SQLImage,
+    link: "https://www.mysql.com/",
+  },
+  {
+    label: "AWS",
+    img: AWSImage,
+    link: "https://aws.amazon.com/",
+  },
+  {
+    label: "Postman",
+    img: PostmanImage,
+    link: "https://www.postman.com/",
+  },
+  {
+    label: "FileZilla",
+    img: FilezillaImage,
+    link: "https://filezilla-project.org/",
+  },
+  {
+    label: "Playstore",
+    img: AndroidImage,
+    link: "https://play.google.com",
+  },
+  {
+    label: "Appstore",
+    img: AppleImage,
+    link: "https://www.apple.com/cl/app-store/",
+  },
 ];
 
 const Skills = () => {
@@ -29,7 +71,7 @@ const Skills = () => {
   const scrollRef = useRef(null);
   const { scrollXProgress } = useScroll({ container: scrollRef });
   const x = useSpring(scrollXProgress, { stiffness: 100, damping: 20 });
-  const width = useTransform(x, (value: number) => `${value * 100}%`); // Use useTransform
+  const width = useTransform(x, (value: number) => `${value * 100}%`);
   const { t } = useTranslation();
 
   return (
@@ -51,50 +93,37 @@ const Skills = () => {
         }}
       >
         {skillItems.map((skill, index) => (
-          <Box
-            key={index}
-            sx={{
-              minWidth: 90,
-              height: 90,
-              bgcolor: theme.palette.mode === "dark" ? "#1f1f1f" : "#f4f4f4",
-              borderRadius: 4,
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              scrollSnapAlign: "start",
-              flexShrink: 0,
-              boxShadow: theme.palette.mode === "dark" ? 2 : 3,
-              transition: "all 0.3s",
-              "&:hover": {
-                transform: "scale(1.05)",
-              },
-            }}
-          >
-            {skill.icon}
-          </Box>
+          <Tooltip key={index} title={skill.label} arrow>
+            <Box
+              onClick={() => window.open(skill.link, "_blank")}
+              sx={{
+                minWidth: 120,
+                height: 120,
+                bgcolor: theme.palette.mode === "dark" ? "#1f1f1f" : "#f4f4f4",
+                borderRadius: 4,
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                scrollSnapAlign: "start",
+                flexShrink: 0,
+                boxShadow: theme.palette.mode === "dark" ? 2 : 3,
+                transition: "all 0.3s",
+                cursor: "pointer",
+                "&:hover": {
+                  transform: "scale(1.05)",
+                },
+              }}
+            >
+              <img
+                src={skill.img}
+                alt={skill.label}
+                style={{ width: 80, height: 80, objectFit: "contain" }}
+              />
+            </Box>
+          </Tooltip>
         ))}
       </Box>
 
-      {/* Scroll Indicator */}
-      <Box
-        sx={{
-          height: 3,
-          width: "100%",
-          bgcolor: "divider",
-          borderRadius: 1,
-          overflow: "hidden",
-          position: "relative",
-        }}
-      >
-        <motion.div
-          style={{
-            height: 3,
-            backgroundColor: "#f1c40f",
-            borderRadius: 1,
-            width: width,
-          }}
-        />
-      </Box>
     </Box>
   );
 };

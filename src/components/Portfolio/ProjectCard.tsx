@@ -1,39 +1,49 @@
-import { Card, CardActionArea, CardMedia, CardContent, Typography } from "@mui/material";
+import {
+  Card,
+  CardMedia,
+  CardContent,
+  Typography,
+} from "@mui/material";
 
 interface ProjectCardProps {
-  url: string;
-  urlImage: string;
-  title: string;
-  subtitle: string;
+  project: {
+    title: string;
+    subtitle: string;
+    images: string[];
+  };
+  onClick: () => void;
 }
 
-const ProjectCard: React.FC<ProjectCardProps> = ({ url, urlImage, title, subtitle }) => {
+const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick }) => {
   return (
     <Card
       sx={{
         maxWidth: 300,
-        bgcolor: "background.paper",
         borderRadius: 3,
         boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.3)",
+        cursor: "pointer",
+        transition: "transform 0.2s ease",
+        "&:hover": {
+          transform: "scale(1.03)",
+        },
       }}
+      onClick={onClick}
     >
-      <CardActionArea href={url} target="_blank" rel="noopener noreferrer">
-        <CardMedia
-          component="img"
-          height="140"
-          image={urlImage}
-          alt={title}
-          sx={{ objectFit: "contain", bgcolor: "background.default" }}
-        />
-        <CardContent>
-          <Typography variant="h6" fontWeight="bold">
-            {title}
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
-            {subtitle}
-          </Typography>
-        </CardContent>
-      </CardActionArea>
+      <CardMedia
+        component="img"
+        height="140"
+        image={project.images[0]}
+        alt={project.title}
+        sx={{ objectFit: "cover", bgcolor: "background.default" }}
+      />
+      <CardContent>
+        <Typography variant="h6" fontWeight="bold">
+          {project.title}
+        </Typography>
+        <Typography variant="body2" color="text.secondary">
+          {project.subtitle}
+        </Typography>
+      </CardContent>
     </Card>
   );
 };
